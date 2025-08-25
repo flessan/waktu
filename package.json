@@ -1,16 +1,41 @@
 {
-  "name": "waktu",
+  "name": "waktu-sholat",
   "version": "1.0.0",
-  "main": "src/index.js",
+  "main": "./src/index.js",
+  "license": "MIT",
+  "author": "R.M. Reza (renomureza@gmail.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renomureza/waktu-sholat.git"
+  },
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node .",
+    "dev": "nodemon .",
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
-    "dayjs": "^1.11.9",
-    "express": "^4.18.2"
+    "@prisma/client": "^3.11.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "geo-tz": "^7.0.1",
+    "mongoose": "^6.2.6",
+    "morgan": "^1.10.0",
+    "winston": "^3.6.0"
   },
-  "engines": {
-    "node": ">=18"
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "node-libcurl": "^2.3.4",
+    "nodemon": "^2.0.15",
+    "prisma": "^3.11.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "data/**"
+    ]
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
   }
 }
